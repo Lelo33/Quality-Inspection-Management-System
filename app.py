@@ -21,11 +21,11 @@ pass_count = 0
 fail_count = 0
 
 while keep_going == "yes":
-    get_inspection_details()
+   results = get_inspection_details()
 if results == "pass":
     pass_count += 1
 else:
-    fail_count += !
+    fail_count += 1
 keep_going = input("\nLog another inspection? (yes/no): ").strip().lower()
 
 print("\nShift complete. Total Passed: {pass_count} | Total Failed: {fail_count}")
