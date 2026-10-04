@@ -1,0 +1,55 @@
+"""Lab 1: Pass rate and failed-inspection positions
+
+Goal: turn a list of inspection results (like the one app.py builds)
+into a pass rate and a list of which inspections failed.
+
+Instructions
+1. Complete pass_rate(results): return the percentage of "pass" results,
+   rounded to 1 decimal place. An empty list returns 0.0.
+2. Complete failed_positions(results): return the positions (counting from 1)
+   of every result that is not "pass".
+3. Run this file. When both checks say OK, you are done.
+4. Stuck? Compare with the reference solution below.
+
+Hint: enumerate(results, start=1) gives you the position and the value.
+"""
+
+
+def pass_rate(results):
+    # TODO: write your code here
+    pass
+
+
+def failed_positions(results):
+    # TODO: write your code here
+    pass
+
+
+# ---------------- Reference solution ----------------
+def pass_rate_solution(results):
+    if not results:
+        return 0.0
+    passes = sum(1 for r in results if r == "pass")
+    return round(100 * passes / len(results), 1)
+
+
+def failed_positions_solution(results):
+    return [i for i, r in enumerate(results, start=1) if r != "pass"]
+
+
+# ---------------- Checks ----------------
+def check(name, got, expected):
+    if got is None:
+        print(f"{name}: not done yet")
+    elif got == expected:
+        print(f"{name}: OK")
+    else:
+        print(f"{name}: expected {expected}, got {got}")
+
+
+if __name__ == "__main__":
+    sample = ["pass", "fail", "pass", "pass", "fail"]
+    check("pass_rate", pass_rate(sample), 60.0)
+    check("pass_rate (empty list)", pass_rate([]), 0.0)
+    check("failed_positions", failed_positions(sample), [2, 5])
+    check("failed_positions (no fails)", failed_positions(["pass", "pass"]), [])
