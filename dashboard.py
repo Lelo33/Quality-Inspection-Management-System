@@ -57,3 +57,36 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Cp", capability["Cp"])
 col2.metric("Cpk", capability["Cpk"])
 col3.metric("Out-of-control points", len(flagged))
+
+st.divider()
+st.header("Defect prediction (machine learning)")
+st.caption(
+    "Logistic regression trained on simulated inspection data "
+    "(80% train / 20% test). Not real production results."
+)
+
+from ml_model import predict_defect_probability, train_and_evaluate
+
+
+@st.cache_resource
+def get_model():
+    return train_and_evaluate()
+
+
+model, metrics = get_model()
+m1, m2, m3 = st.columns(3)
+m1.metric("Accuracy", metrics["accuracy"])
+m2.metric("Precision", metrics["precision"])
+m3.metric("Recall", metrics["recall"])
+
+st.subheader("Try a reading")
+dev = st.number_input("Deviation from target", value=0.0, step=0.1)
+speed = st.number_input("Line speed", value=100.0, step=1.0)
+temp = st.number_input("Temperature", value=70.0, step=1.0)
+
+probability = predict_defect_probability(model, dev, speed, temp)
+st.metric("Defect probability", f"{probability:.0%}")
+if probability > 0.5:
+    st.warning("High defect risk: action required.")
+else:
+    st.success("Low defect risk.")
