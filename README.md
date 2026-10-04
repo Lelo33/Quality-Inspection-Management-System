@@ -2,9 +2,9 @@
 
 A simple Python tool to log quality inspections, with a Statistical Process Control (SPC) dashboard.
 
-**Live dashboard:** [Open the SPC dashboard] (https://quality-inspection-management-system-m7hheywoifwudh7tmwfepb.streamlit.app)
+Live dashboard: https://quality-inspection-management-system-m7hheywoifwudh7tmwfepb.streamlit.app
 
-**Guide:** [SPC Dashboard Guide](GUIDE.md) (SPC-Dashboard-Guide.pdf)
+Guide (PDF): https://github.com/Lelo33/Quality-Inspection-Management-System/blob/main/SPC-Dashboard-Guide.pdf
 
 ## Why I built this
 I've worked in manufacturing quality control for over 9 years.
