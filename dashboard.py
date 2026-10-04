@@ -85,7 +85,8 @@ speed = st.number_input("Line speed", value=100.0, step=1.0)
 temp = st.number_input("Temperature", value=70.0, step=1.0)
 
 probability = predict_defect_probability(model, dev, speed, temp)
-st.metric("Defect probability", f"{probability:.0%}")
+shown = ">99%" if probability > 0.995 else ("<1%" if probability < 0.005 else f"{probability:.0%}")
+st.metric("Defect probability", shown)
 if probability > 0.5:
     st.warning("High defect risk: action required.")
 else:
