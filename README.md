@@ -4,7 +4,7 @@ A simple Python tool to log quality inspections, with a Statistical Process Cont
 
 **Live dashboard:** [Open the SPC dashboard](https://quality-inspection-management-system-m7hheywoifwudh7tmwfepb.streamlit.app)
 
-**Guide:** [SPC Dashboard Guide (PDF)](SPC-Dashboard-Guide.pdf)
+**Guide:** [SPC Dashboard Guide](GUIDE.md)
 
 ## Why I built this
 I've worked in manufacturing quality control for over 9 years.
@@ -46,8 +46,9 @@ Three short Python exercises with starter code, solutions and self-checks. See t
 - `spc.py` - SPC calculations (control limits, out-of-control points, Cp/Cpk)
 - `dashboard.py` - Streamlit SPC dashboard
 - `ml_model.py` - defect prediction model
-- `labs/` - Python exercises
-- `docs/` - SPC Dashboard Guide (PDF)
+- `requirements.txt` - Python libraries the dashboard needs
+- `labs/` - Python exercises with solutions and self-checks
+- `GUIDE.md` - SPC Dashboard Guide
 
 ## What's next
 - Record real measurements and save inspections to a file
