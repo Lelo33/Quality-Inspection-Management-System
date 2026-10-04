@@ -1,1 +1,1 @@
-**Guide:** docs:SPC-Dashboard-Guide.pdf
+docs/SPC-Dashboard-Guide.pdf
