@@ -1,1 +1,1 @@
-**Guide:** [SPC Dashboard Guide (PDF)](SPC-Dashboard-Guide.pdf)
+**Guide:** docs/SPC-Dashboard-Guide.pdf
